@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chinese Bing Map Demo</title>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+    <link href='https://unpkg.com/leaflet@1.3.4/dist/leaflet.css' rel='stylesheet' />
+    <script src="leaflet-bingCN-layer.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+
+
+        var map = L.map('map').setView([40.049659, 116.293059], 15);
+
+        L.tileLayer.bingCN().addTo(map);
+
+        var marker = L.marker([40.049659, 116.293059])
+            .addTo(map)
+            .bindPopup("<b>你好，中文必应地图</b><br>Hello, this is Chinese Bing Map.")
+            .openPopup();
+
+
+    </script>
+</body>
+
+</html>
